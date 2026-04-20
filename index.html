@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI Smart POS – Smart Business Solution | Best POS Software Pakistan</title>
+    <meta name="description"
+        content="MI Smart POS – Advanced POS & Invoicing System for Pakistan businesses with FBR Integration, custom branding, inventory management, and powerful sales reports.">
+    <meta name="keywords"
+        content="POS in Pakistan, POS Software Pakistan, Best POS System Pakistan, FBR POS Integration, Smart POS Software, Retail POS Pakistan">
+    <meta name="author" content="Malik Irteza">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="MI Smart POS – Smart Business Solution">
+    <meta property="og:description"
+        content="Advanced POS & Invoicing System with FBR Integration for Pakistan businesses.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== PAGE LOADER ===== -->
+    <div class="loader-overlay" id="page-loader">
+
+        <!-- Star field — 4 layers of CSS-generated stars -->
+        <div class="loader-stars s1"></div>
+        <div class="loader-stars s2"></div>
+        <div class="loader-stars s3"></div>
+        <div class="loader-stars s4"></div>
+
+        <!-- Shooting Stars -->
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+
+        <!-- Nebula ambient glows -->
+        <div class="loader-nebula n1"></div>
+        <div class="loader-nebula n2"></div>
+        <div class="loader-nebula n3"></div>
+
+        <!-- HUD Corner labels -->
+        <div class="loader-hud-tl">SYS·INIT</div>
+        <div class="loader-hud-tr">v2.6.0</div>
+        <div class="loader-hud-bl">MI SMART POS</div>
+        <div class="loader-hud-br">PKR / USD</div>
+
+        <!-- Horizontal scan line -->
+        <div class="loader-scanline"></div>
+
+        <!-- Main loader content -->
+        <div class="loader-content">
+
+            <!-- Radar / 3D Scene -->
+            <div class="loader-radar">
+                <div class="radar-ring r1"></div>
+                <div class="radar-ring r2"></div>
+                <div class="radar-ring r3"></div>
+                <div class="radar-ring r4"></div>
+                <div class="radar-sweep"></div>
+                <div class="radar-blip b1"></div>
+                <div class="radar-blip b2"></div>
+                <div class="radar-blip b3"></div>
+
+                <!-- 3D spinning cube -->
+                <div class="cube-scene">
+                    <div class="cube">
+                        <div class="cube-face front"></div>
+                        <div class="cube-face back"></div>
+                        <div class="cube-face right"></div>
+                        <div class="cube-face left"></div>
+                        <div class="cube-face top"></div>
+                        <div class="cube-face bottom"></div>
+                    </div>
+                </div>
+
+                <!-- Logo ring -->
+                <div class="loader-logo-ring">
+                    <img src="assets/logo.png" alt="MI Smart POS" class="loader-logo-scifi">
+                </div>
+            </div>
+
+            <!-- Brand name with glitch effect -->
+            <div class="loader-brand">
+                <span class="loader-brand-main" data-text="MI SMART POS">MI SMART POS</span>
+                <span class="loader-brand-sub">Smart Business Solution</span>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="loader-track-scifi">
+                <div class="loader-fill-scifi" id="loader-progress"></div>
+                <div class="loader-track-glow"></div>
+            </div>
+
+            <!-- Percent / status -->
+            <div class="loader-percent-scifi" id="loader-percent">0%</div>
+
+            <!-- Status row -->
+            <div class="loader-status-row">
+                <span class="loader-status-dot"></span>
+                <span class="loader-text-scifi" id="loader-status">Connecting you to Servers of Malik Irteza....</span>
+            </div>
+
+            <!-- Feature chips -->
+            <div class="loader-chips">
+                <div class="loader-chip"><span class="chip-icon">📊</span>Analytics</div>
+                <div class="loader-chip"><span class="chip-icon">🛡️</span>FBR Ready</div>
+                <div class="loader-chip"><span class="chip-icon">📦</span>Inventory</div>
+            </div>
+
+        </div><!-- /loader-content -->
+    </div><!-- /page-loader -->
+
+    <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+    <!-- ===== BACKGROUND CANVAS ===== -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="main-nav" class="navbar">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-logo">
+                <img src="assets/logo.png" alt="MI Smart POS" class="nav-logo-img">
+                <span class="nav-logo-text">MI Smart <span class="accent">POS</span></span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#screenshots" class="nav-link">Screenshots</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="nav-btn">Buy Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-orb orb-1"></div>
+        <div class="hero-bg-orb orb-2"></div>
+        <div class="hero-bg-orb orb-3"></div>
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge anim"><span class="badge-pulse"></span>Trusted POS Solution</div>
+                <h1 class="hero-title anim">MI Smart POS<br><span class="gradient-text">Smart Business Solution</span>
+                </h1>
+                <p class="hero-sub anim">Advanced POS & Invoicing System with <strong>FBR Integration</strong> — built
+                    for Pakistan businesses with custom branding and powerful analytics.</p>
+                <div class="hero-btns anim">
+                    <a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="btn btn-primary" id="hero-buy">
+                        <span class="btn-shine"></span>Buy Now
+                    </a>
+                    <button class="btn btn-outline" id="hero-ss" onclick="openModal()">View Screenshots</button>
+                </div>
+                <div class="hero-trust anim">
+                    <div class="trust-item"><strong class="count"
+                            data-target="500">0</strong><span>+</span><small>Active Users</small></div>
+                    <div class="trust-sep"></div>
+                    <div class="trust-item"><strong class="count"
+                            data-target="99">0</strong><span>%</span><small>Uptime</small></div>
+                    <div class="trust-sep"></div>
+                    <div class="trust-item"><strong>24/7</strong><small>Support</small></div>
+                </div>
+            </div>
+            <div class="hero-visual anim">
+                <div class="hero-card hc-1"><span class="hc-icon">📊</span>Real-Time Analytics</div>
+                <div class="hero-card hc-2"><span class="hc-icon">🧾</span>FBR Invoicing</div>
+                <div class="hero-card hc-3"><span class="hc-icon">📦</span>Inventory Sync</div>
+                <div class="hero-mockup-glow"></div>
+            </div>
+        </div>
+        <a href="#features" class="scroll-cue anim">
+            <div class="scroll-dot"></div>
+        </a>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="section features">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Features</span>
+                <h2>Everything You Need to <span class="gradient-text">Grow</span></h2>
+                <p>Powerful tools built for modern businesses.</p>
+            </div>
+            <div class="feat-grid">
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">📄</div>
+                    <h3>Smart Invoicing</h3>
+                    <p>Professional invoices with auto tax calculations, custom templates, and digital receipts.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">📦</div>
+                    <h3>Inventory Management</h3>
+                    <p>Real-time stock tracking, low-inventory alerts, supplier management, and auto reorders.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">🛡️</div>
+                    <h3>FBR Integration</h3>
+                    <p>Fully compliant with Pakistan FBR requirements. Seamless tax reporting integration.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">🎨</div>
+                    <h3>Custom Branding</h3>
+                    <p>Your business name, logo, and colors on every invoice and receipt.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">📊</div>
+                    <h3>Sales Reports & Analytics</h3>
+                    <p>Rich dashboards with sales trends, profit margins, and exportable data reports.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">🚀</div>
+                    <h3>Easy Setup</h3>
+                    <p>One-click installation with guided wizard. Running in minutes, not hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="section pricing">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Pricing</span>
+                <h2>Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+                <p>No hidden fees. Choose what fits your business.</p>
+            </div>
+            <div class="price-grid">
+                <div class="price-card featured tilt anim">
+                    <div class="price-badge">Most Popular</div>
+                    <h3>Lifetime License</h3>
+                    <p class="price-desc">One-time payment, lifetime access</p>
+                    <div class="price-amounts">
+                        <div class="price-row"><span class="price-currency">USD</span><span
+                                class="price-value">$72</span></div>
+                        <div class="price-divider">or</div>
+                        <div class="price-row"><span class="price-currency">PKR</span><span
+                                class="price-value">20,000</span></div>
+                    </div>
+                    <span class="price-period">One-Time Payment</span>
+                    <ul class="price-list">
+                        <li>✓ Full POS System</li>
+                        <li>✓ FBR Integration</li>
+                        <li>✓ Custom Branding</li>
+                        <li>✓ Sales Reports</li>
+                        <li>✓ Inventory Management</li>
+                        <li>✓ Lifetime Updates</li>
+                        <li>✓ Priority Support</li>
+                    </ul>
+                    <a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS%20-%20Lifetime"
+                        target="_blank" class="btn btn-primary btn-block"><span class="btn-shine"></span>Get Lifetime
+                        Access</a>
+                </div>
+                <div class="price-card tilt anim">
+                    <h3>Monthly Plan</h3>
+                    <p class="price-desc">Flexible monthly subscription</p>
+                    <div class="price-amounts">
+                        <div class="price-row"><span class="price-currency">USD</span><span
+                                class="price-value">$10</span></div>
+                        <div class="price-divider">or</div>
+                        <div class="price-row"><span class="price-currency">PKR</span><span
+                                class="price-value">2,500</span></div>
+                    </div>
+                    <span class="price-period">Per Month</span>
+                    <ul class="price-list">
+                        <li>✓ Full POS System</li>
+                        <li>✓ FBR Integration</li>
+                        <li>✓ Custom Branding</li>
+                        <li>✓ Sales Reports</li>
+                        <li>✓ Inventory Management</li>
+                        <li>✓ Monthly Updates</li>
+                        <li>✓ Email Support</li>
+                    </ul>
+                    <a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS%20-%20Monthly"
+                        target="_blank" class="btn btn-outline btn-block">Start Monthly Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SCREENSHOTS ===== -->
+    <section id="screenshots" class="section screenshots">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Preview</span>
+                <h2>See It <span class="gradient-text">In Action</span></h2>
+                <p>Explore the MI Smart POS interface.</p>
+            </div>
+            <div class="ss-action anim"><button class="btn btn-primary btn-lg" onclick="openModal()"><span
+                        class="btn-shine"></span>📸 Open Screenshot Gallery</button></div>
+        </div>
+    </section>
+
+    <!-- ===== SCREENSHOT MODAL ===== -->
+    <div class="modal" id="ss-modal">
+        <div class="modal-box">
+            <button class="modal-x" onclick="closeModal()">✕</button>
+            <h3 class="modal-heading">Screenshot Gallery</h3>
+            <div class="modal-grid" id="modal-grid">
+                <div class="modal-empty" id="modal-empty">
+                    <p>📸 Add images to the <code>/screenshots</code> folder to see them here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox"><button class="lb-close" onclick="closeLB()">✕</button><img id="lb-img" src=""
+            alt="Preview"></div>
+
+    <!-- ===== CONTACT / CTA ===== -->
+    <section id="contact" class="section cta">
+        <div class="container">
+            <div class="cta-inner anim">
+                <span class="tag">Get Started</span>
+                <h2>Ready to Transform<br>Your <span class="gradient-text">Business?</span></h2>
+                <p>Reach out on WhatsApp — we'll get you set up instantly.</p>
+                <div class="cta-btns">
+                    <a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="btn btn-wa"><span class="btn-shine"></span>💬 WhatsApp — Primary</a>
+                    <a href="https://wa.me/923162905672?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="btn btn-wa-alt">💬 WhatsApp — Secondary</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand"><img src="assets/logo.png" alt="MI Smart POS" class="footer-logo"><span>MI Smart
+                    <span class="accent">POS</span></span></div>
+            <div class="footer-nav"><a href="#hero">Home</a><a href="#features">Features</a><a
+                    href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+        </div>
+        <div class="container">
+            <div class="footer-line"></div>
+        </div>
+        <div class="container footer-bottom">
+            <p>Website & Software developed by <a href="https://malikirteza.github.io/" target="_blank">Malik Irteza</a>
+            </p>
+            <p class="copy">© 2026 MI Smart POS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== THEME TOGGLE (Fixed Bottom-Right) ===== -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle Light/Dark Mode">
+        <span class="theme-icon theme-icon-sun">☀️</span>
+        <span class="theme-icon theme-icon-moon">🌙</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
