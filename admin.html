@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - MI Smart POS</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body class="admin-body">
+    <div id="login-screen" class="admin-login">
+        <div class="admin-login-box">
+            <div class="admin-login-logo">
+                <img src="assets/logo.png" alt="MI Smart POS">
+                <h2>MI Smart <span class="accent">POS</span></h2>
+                <p>Admin Panel</p>
+            </div>
+            <form id="login-form" autocomplete="off">
+                <div class="admin-field">
+                    <label for="login-user">Username</label>
+                    <input type="text" id="login-user" placeholder="Enter username" required>
+                </div>
+                <div class="admin-field">
+                    <label for="login-pass">Password</label>
+                    <input type="password" id="login-pass" placeholder="Enter password" required>
+                </div>
+                <div id="login-error" class="admin-login-error"></div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard-screen" class="admin-dashboard" style="display:none">
+        <header class="admin-header">
+            <div class="admin-header-inner">
+                <h2>Admin Dashboard</h2>
+                <div class="admin-header-right">
+                    <a href="index.html" class="btn btn-outline" target="_blank">View Site</a>
+                    <button id="logout-btn" class="btn btn-primary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="pricing">Pricing</button>
+                <button class="admin-tab" data-tab="variants">Variants</button>
+                <button class="admin-tab" data-tab="hardware">Hardware</button>
+                <button class="admin-tab" data-tab="whatsapp">WhatsApp Numbers</button>
+            </div>
+
+            <div id="tab-pricing" class="admin-tab-content active">
+                <h3>Plan Details (shared between OT &amp; MO)</h3>
+                <div class="admin-plan-grid">
+                    <div class="admin-plan-card">
+                        <h4>Standard 📌</h4>
+                        <div class="admin-field">
+                            <label>Accounts</label>
+                            <input type="text" id="pricing-standard-accounts" placeholder="1 User Account">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="pricing-standard-desc" rows="3" placeholder="Perfect for small shops..."></textarea>
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Premium ⭐</h4>
+                        <div class="admin-field">
+                            <label>Accounts</label>
+                            <input type="text" id="pricing-premium-accounts" placeholder="1 Admin + 1 Cashier Account + 1 Cashier Account Free">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="pricing-premium-desc" rows="3" placeholder="Designed for growing businesses..."></textarea>
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Enterprise 👑</h4>
+                        <div class="admin-field">
+                            <label>Accounts</label>
+                            <input type="text" id="pricing-enterprise-accounts" placeholder="Unlimited User Accounts">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="pricing-enterprise-desc" rows="3" placeholder="The ultimate solution for distributors..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:36px">One Time Payments — Pricing</h3>
+                <div class="admin-plan-grid">
+                    <div class="admin-plan-card">
+                        <h4>Standard</h4>
+                        <div class="admin-field">
+                            <label>Price (PKR)</label>
+                            <input type="text" id="pricing-standard-otPrice" placeholder="30,000">
+                        </div>
+                        <div class="admin-field">
+                            <label>Installation</label>
+                            <input type="text" id="pricing-standard-otInstall" placeholder="Installation Charges">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Premium</h4>
+                        <div class="admin-field">
+                            <label>Price (PKR)</label>
+                            <input type="text" id="pricing-premium-otPrice" placeholder="35,000">
+                        </div>
+                        <div class="admin-field">
+                            <label>Installation</label>
+                            <input type="text" id="pricing-premium-otInstall" placeholder="Installation Charges">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Enterprise</h4>
+                        <div class="admin-field">
+                            <label>Custom Note</label>
+                            <input type="text" id="pricing-enterprise-otInstall" placeholder="Pricing is customized according to the number of devices and business requirements.">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:36px">Monthly Plans — Pricing</h3>
+                <div class="admin-plan-grid">
+                    <div class="admin-plan-card">
+                        <h4>Standard</h4>
+                        <div class="admin-field">
+                            <label>Price (PKR)</label>
+                            <input type="text" id="pricing-standard-moPrice" placeholder="2,500">
+                        </div>
+                        <div class="admin-field">
+                            <label>Installation</label>
+                            <input type="text" id="pricing-standard-moInstall" placeholder="Installation Charges">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Premium</h4>
+                        <div class="admin-field">
+                            <label>Price (PKR)</label>
+                            <input type="text" id="pricing-premium-moPrice" placeholder="6,999">
+                        </div>
+                        <div class="admin-field">
+                            <label>Installation</label>
+                            <input type="text" id="pricing-premium-moInstall" placeholder="Installation Charges">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Enterprise</h4>
+                        <div class="admin-field">
+                            <label>Custom Note</label>
+                            <input type="text" id="pricing-enterprise-moInstall" placeholder="Pricing is customized according to the number of devices and business requirements.">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="save-pricing" class="btn btn-primary btn-lg">Save Pricing</button>
+                <div id="pricing-saved-msg" class="admin-success-msg"></div>
+            </div>
+
+            <div id="tab-variants" class="admin-tab-content">
+                <h3>POS Variants</h3>
+                <div class="admin-plan-grid">
+                    <div class="admin-plan-card">
+                        <h4>Restaurant POS</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="var-restaurant-icon" placeholder="e.g. 🍽️">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="var-restaurant-name" placeholder="Restaurant POS">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="var-restaurant-desc" rows="2" placeholder="Complete restaurant management with table layout, kitchen orders, and billing."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="var-restaurant-badge" placeholder="Available">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color (green / yellow / purple / blue / red)</label>
+                            <input type="text" id="var-restaurant-color" placeholder="green">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Mart POS</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="var-mart-icon" placeholder="e.g. 🛒">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="var-mart-name" placeholder="Mart POS">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="var-mart-desc" rows="2" placeholder="Retail and supermarket POS with barcode scanning and inventory tracking."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="var-mart-badge" placeholder="Available">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="var-mart-color" placeholder="green">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Bakery POS</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="var-bakery-icon" placeholder="e.g. 🥖">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="var-bakery-name" placeholder="Bakery POS">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="var-bakery-desc" rows="2" placeholder="Bakery-specific billing with weight-based pricing and recipe management."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="var-bakery-badge" placeholder="Coming Soon">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="var-bakery-color" placeholder="yellow">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Distributor POS</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="var-distributor-icon" placeholder="e.g. 🚚">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="var-distributor-name" placeholder="Distributor POS">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="var-distributor-desc" rows="2" placeholder="Wholesale distribution POS with bulk pricing and delivery management."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="var-distributor-badge" placeholder="Premium">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="var-distributor-color" placeholder="purple">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Salon POS</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="var-salon-icon" placeholder="e.g. 💇">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="var-salon-name" placeholder="Salon POS">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="var-salon-desc" rows="2" placeholder="Salon and spa POS with appointment booking and service management."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="var-salon-badge" placeholder="Enterprise">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="var-salon-color" placeholder="blue">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Pharmacy POS</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="var-pharmacy-icon" placeholder="e.g. 💊">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="var-pharmacy-name" placeholder="Pharmacy POS">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="var-pharmacy-desc" rows="2" placeholder="Pharmacy POS with expiry tracking, prescription management, and GST."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="var-pharmacy-badge" placeholder="Enterprise">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="var-pharmacy-color" placeholder="blue">
+                        </div>
+                    </div>
+                </div>
+                <button id="save-variants" class="btn btn-primary btn-lg">Save Variants</button>
+                <div id="variants-saved-msg" class="admin-success-msg"></div>
+            </div>
+
+            <div id="tab-hardware" class="admin-tab-content">
+                <h3>POS Hardware</h3>
+                <div class="admin-plan-grid">
+                    <div class="admin-plan-card">
+                        <h4>Barcode Scanner</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="hw-scanner-icon" placeholder="e.g. 📷">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="hw-scanner-name" placeholder="Barcode Scanner">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="hw-scanner-desc" rows="2" placeholder="High-speed barcode scanner for quick product scanning at checkout."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="hw-scanner-badge" placeholder="In Stock">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color (green / yellow / purple / blue / red)</label>
+                            <input type="text" id="hw-scanner-color" placeholder="green">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Barcode Generator</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="hw-barcode-gen-icon" placeholder="e.g. 🏷️">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="hw-barcode-gen-name" placeholder="Barcode Generator">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="hw-barcode-gen-desc" rows="2" placeholder="Create and print custom barcodes for your product inventory."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="hw-barcode-gen-badge" placeholder="In Stock">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="hw-barcode-gen-color" placeholder="green">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Thermal Printer</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="hw-thermal-icon" placeholder="e.g. 🧾">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="hw-thermal-name" placeholder="Thermal Printer">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="hw-thermal-desc" rows="2" placeholder="High-speed thermal receipt printer with reliable performance."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="hw-thermal-badge" placeholder="In Stock">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="hw-thermal-color" placeholder="green">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>A4 Printer</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="hw-a4-printer-icon" placeholder="e.g. 🖨️">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="hw-a4-printer-name" placeholder="A4 Printer">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="hw-a4-printer-desc" rows="2" placeholder="Multifunction A4 printer for invoices, reports, and documents."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="hw-a4-printer-badge" placeholder="Available">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="hw-a4-printer-color" placeholder="blue">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>POS Terminal</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="hw-pos-terminal-icon" placeholder="e.g. 💻">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="hw-pos-terminal-name" placeholder="POS Terminal">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="hw-pos-terminal-desc" rows="2" placeholder="All-in-one POS terminal with touchscreen and built-in printer."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="hw-pos-terminal-badge" placeholder="Available">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="hw-pos-terminal-color" placeholder="blue">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Cash Drawer</h4>
+                        <div class="admin-field">
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="hw-cash-drawer-icon" placeholder="e.g. 💰">
+                        </div>
+                        <div class="admin-field">
+                            <label>Name</label>
+                            <input type="text" id="hw-cash-drawer-name" placeholder="Cash Drawer">
+                        </div>
+                        <div class="admin-field">
+                            <label>Description</label>
+                            <textarea id="hw-cash-drawer-desc" rows="2" placeholder="Secure cash drawer with automatic release on transaction completion."></textarea>
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge / Status</label>
+                            <input type="text" id="hw-cash-drawer-badge" placeholder="Available">
+                        </div>
+                        <div class="admin-field">
+                            <label>Badge Color</label>
+                            <input type="text" id="hw-cash-drawer-color" placeholder="blue">
+                        </div>
+                    </div>
+                </div>
+                <button id="save-hardware" class="btn btn-primary btn-lg">Save Hardware</button>
+                <div id="hardware-saved-msg" class="admin-success-msg"></div>
+            </div>
+
+            <div id="tab-whatsapp" class="admin-tab-content">
+                <h3>WhatsApp Numbers</h3>
+                <div class="admin-plan-grid">
+                    <div class="admin-plan-card">
+                        <h4>Primary Number</h4>
+                        <div class="admin-field">
+                            <label>Number (with country code, no +)</label>
+                            <input type="text" id="wa-primary" placeholder="e.g. 923325900007">
+                        </div>
+                    </div>
+                    <div class="admin-plan-card">
+                        <h4>Secondary Number</h4>
+                        <div class="admin-field">
+                            <label>Number (with country code, no +)</label>
+                            <input type="text" id="wa-secondary" placeholder="e.g. 923162905672">
+                        </div>
+                    </div>
+                </div>
+                <button id="save-whatsapp" class="btn btn-primary btn-lg">Save WhatsApp Numbers</button>
+                <div id="whatsapp-saved-msg" class="admin-success-msg"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

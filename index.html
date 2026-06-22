@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI Smart POS – Smart Business Solution | Best POS Software Pakistan</title>
+    <meta name="description"
+        content="MI Smart POS – Advanced POS & Invoicing System for Pakistan businesses with FBR Integration, custom branding, inventory management, and powerful sales reports.">
+    <meta name="keywords"
+        content="POS in Pakistan, POS Software Pakistan, Best POS System Pakistan, FBR POS Integration, Smart POS Software, Retail POS Pakistan">
+    <meta name="author" content="Malik Irteza">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="MI Smart POS – Smart Business Solution">
+    <meta property="og:description"
+        content="Advanced POS & Invoicing System with FBR Integration for Pakistan businesses.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ===== PREMIUM LOADER ===== -->
+    <div class="preloader" id="preloader">
+        <canvas id="loader-canvas"></canvas>
+        <div class="preloader-overlay">
+            <div class="preloader-center">
+                <div class="preloader-logo-wrap" id="loader-logo">
+                    <div class="preloader-logo-ring"></div>
+                    <img src="assets/logo.png" alt="MI Smart POS" class="preloader-logo">
+                </div>
+                <h1 class="preloader-title" id="loader-title">MI SMART POS</h1>
+                <p class="preloader-sub" id="loader-sub">Smart Business Solution</p>
+                <div class="preloader-progress-track" id="loader-track">
+                    <div class="preloader-progress-fill" id="loader-fill"></div>
+                </div>
+                <p class="preloader-status" id="loader-status">Connecting You to Servers Of Malik Irteza</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+    <!-- ===== BACKGROUND CANVAS ===== -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="main-nav" class="navbar">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-logo">
+                <img src="assets/logo.png" alt="MI Smart POS" class="nav-logo-img">
+                <span class="nav-logo-text">MI Smart <span class="accent">POS</span></span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#variants" class="nav-link">Variants</a></li>
+                <li><a href="#hardware" class="nav-link">Hardware</a></li>
+                <li><a href="#screenshots" class="nav-link">Screenshots</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="admin.html" class="nav-link admin-link" title="Admin Panel">Admin</a></li>
+                <li><a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="nav-btn wa-link">Buy Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-orb orb-1"></div>
+        <div class="hero-bg-orb orb-2"></div>
+        <div class="hero-bg-orb orb-3"></div>
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge anim"><span class="badge-pulse"></span>Trusted POS Solution</div>
+                <h1 class="hero-title anim">MI Smart POS<br><span class="gradient-text">Smart Business Solution</span>
+                </h1>
+                <p class="hero-sub anim">Advanced POS & Invoicing System with <strong>FBR Integration</strong> — built
+                    for Pakistan businesses with custom branding and powerful analytics.</p>
+                <div class="hero-btns anim">
+                    <a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="btn btn-primary wa-link" id="hero-buy">
+                        <span class="btn-shine"></span>Buy Now
+                    </a>
+                    <button class="btn btn-outline" id="hero-ss" onclick="openModal()">View Screenshots</button>
+                </div>
+                <div class="hero-trust anim">
+                    <div class="trust-item"><strong class="count"
+                            data-target="500">0</strong><span>+</span><small>Active Users</small></div>
+                    <div class="trust-sep"></div>
+                    <div class="trust-item"><strong class="count"
+                            data-target="99">0</strong><span>%</span><small>Uptime</small></div>
+                    <div class="trust-sep"></div>
+                    <div class="trust-item"><strong>24/7</strong><small>Support</small></div>
+                </div>
+            </div>
+            <div class="hero-visual anim">
+                <div class="hero-card hc-1"><span class="hc-icon">📊</span>Real-Time Analytics</div>
+                <div class="hero-card hc-2"><span class="hc-icon">🧾</span>FBR Invoicing</div>
+                <div class="hero-card hc-3"><span class="hc-icon">📦</span>Inventory Sync</div>
+                <div class="hero-mockup-glow"></div>
+            </div>
+        </div>
+        <a href="#features" class="scroll-cue anim">
+            <div class="scroll-dot"></div>
+        </a>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="section features">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Features</span>
+                <h2>Everything You Need to <span class="gradient-text">Grow</span></h2>
+                <p>Powerful tools built for modern businesses.</p>
+            </div>
+            <div class="feat-grid">
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">📄</div>
+                    <h3>Smart Invoicing</h3>
+                    <p>Professional invoices with auto tax calculations, custom templates, and digital receipts.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">📦</div>
+                    <h3>Inventory Management</h3>
+                    <p>Real-time stock tracking, low-inventory alerts, supplier management, and auto reorders.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">🛡️</div>
+                    <h3>FBR Integration</h3>
+                    <p>Fully compliant with Pakistan FBR requirements. Seamless tax reporting integration.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">🎨</div>
+                    <h3>Custom Branding</h3>
+                    <p>Your business name, logo, and colors on every invoice and receipt.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">📊</div>
+                    <h3>Sales Reports & Analytics</h3>
+                    <p>Rich dashboards with sales trends, profit margins, and exportable data reports.</p>
+                </div>
+                <div class="feat-card tilt anim">
+                    <div class="feat-icon">🚀</div>
+                    <h3>Easy Setup</h3>
+                    <p>One-click installation with guided wizard. Running in minutes, not hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="section pricing">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Pricing</span>
+                <h2>Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+                <p>No hidden fees. Choose what fits your business.</p>
+            </div>
+
+            <div class="price-type-label anim">One Time Payments</div>
+            <div class="price-grid" id="price-grid-ot">
+                <div class="price-card featured tilt anim" data-plan="ot-standard">
+                    <div class="price-badge">Most Popular</div>
+                    <div class="plan-icon">📌</div>
+                    <h3 class="plan-name">STANDARD</h3>
+                    <p class="price-accounts plan-accounts">1 User Account</p>
+                    <p class="price-desc plan-desc">Perfect for small shops and retail stores. Enjoy lightning-fast billing, inventory management, sales reports, barcode support, and receipt printing in a fully offline POS system. Simple, reliable, and easy to use.</p>
+                    <div class="price-amounts">
+                        <div class="price-row">
+                            <span class="price-currency">PKR</span>
+                            <span class="price-value plan-price" data-field="ot-price">30,000</span>
+                        </div>
+                        <div class="price-divider plan-install">+ Installation Charges</div>
+                    </div>
+                    <span class="price-period">One-Time Payment</span>
+                    <a href="#" target="_blank" class="btn btn-primary btn-block wa-link"><span class="btn-shine"></span>Get Standard</a>
+                </div>
+                <div class="price-card tilt anim" data-plan="ot-premium">
+                    <div class="plan-icon">⭐</div>
+                    <h3 class="plan-name">PREMIUM</h3>
+                    <p class="price-accounts plan-accounts">1 Admin + 1 Cashier Account + 1 Cashier Account Free</p>
+                    <p class="price-desc plan-desc">Designed for growing businesses that need multiple users and better control. Includes advanced reporting, purchase management, supplier management, stock alerts, and role-based access to streamline daily operations.</p>
+                    <div class="price-amounts">
+                        <div class="price-row">
+                            <span class="price-currency">PKR</span>
+                            <span class="price-value plan-price" data-field="ot-price">35,000</span>
+                        </div>
+                        <div class="price-divider plan-install">+ Installation Charges</div>
+                    </div>
+                    <span class="price-period">One-Time Payment</span>
+                    <a href="#" target="_blank" class="btn btn-outline btn-block wa-link">Get Premium</a>
+                </div>
+                <div class="price-card tilt anim" data-plan="ot-enterprise">
+                    <div class="plan-icon">👑</div>
+                    <h3 class="plan-name">ENTERPRISE</h3>
+                    <p class="price-accounts plan-accounts">Unlimited User Accounts</p>
+                    <p class="price-desc plan-desc">The ultimate solution for distributors, wholesalers, supermarkets, and multi-branch businesses. Includes unlimited users, warehouse management, distributor operations, FBR integration, cloud synchronization, custom modules, and dedicated support for enterprise-level growth.</p>
+                    <div class="price-amounts">
+                        <div class="price-row">
+                            <span class="price-currency"></span>
+                            <span class="price-value price-contact">According to Devices</span>
+                        </div>
+                        <div class="price-divider plan-install price-custom-note">Pricing is customized according to the number of devices and business requirements.</div>
+                    </div>
+                    <a href="#" target="_blank" class="btn btn-outline btn-block wa-link">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="price-type-label anim" style="margin-top:50px">Monthly Plans</div>
+            <div class="price-grid" id="price-grid-mo">
+                <div class="price-card featured tilt anim" data-plan="mo-standard">
+                    <div class="price-badge">Most Popular</div>
+                    <div class="plan-icon">📌</div>
+                    <h3 class="plan-name">STANDARD</h3>
+                    <p class="price-accounts plan-accounts">1 User Account</p>
+                    <p class="price-desc plan-desc">Perfect for small shops and retail stores. Enjoy lightning-fast billing, inventory management, sales reports, barcode support, and receipt printing in a fully offline POS system. Simple, reliable, and easy to use.</p>
+                    <div class="price-amounts">
+                        <div class="price-row">
+                            <span class="price-currency">PKR</span>
+                            <span class="price-value plan-price" data-field="mo-price">2,500</span>
+                        </div>
+                        <div class="price-divider plan-install">+ Installation Charges</div>
+                    </div>
+                    <span class="price-period">Per Month</span>
+                    <a href="#" target="_blank" class="btn btn-primary btn-block wa-link"><span class="btn-shine"></span>Get Standard</a>
+                </div>
+                <div class="price-card tilt anim" data-plan="mo-premium">
+                    <div class="plan-icon">⭐</div>
+                    <h3 class="plan-name">PREMIUM</h3>
+                    <p class="price-accounts plan-accounts">1 Admin + 1 Cashier Account + 1 Cashier Account Free</p>
+                    <p class="price-desc plan-desc">Designed for growing businesses that need multiple users and better control. Includes advanced reporting, purchase management, supplier management, stock alerts, and role-based access to streamline daily operations.</p>
+                    <div class="price-amounts">
+                        <div class="price-row">
+                            <span class="price-currency">PKR</span>
+                            <span class="price-value plan-price" data-field="mo-price">6,999</span>
+                        </div>
+                        <div class="price-divider plan-install">+ Installation Charges</div>
+                    </div>
+                    <span class="price-period">Per Month</span>
+                    <a href="#" target="_blank" class="btn btn-outline btn-block wa-link">Get Premium</a>
+                </div>
+                <div class="price-card tilt anim" data-plan="mo-enterprise">
+                    <div class="plan-icon">👑</div>
+                    <h3 class="plan-name">ENTERPRISE</h3>
+                    <p class="price-accounts plan-accounts">Unlimited User Accounts</p>
+                    <p class="price-desc plan-desc">The ultimate solution for distributors, wholesalers, supermarkets, and multi-branch businesses. Includes unlimited users, warehouse management, distributor operations, FBR integration, cloud synchronization, custom modules, and dedicated support for enterprise-level growth.</p>
+                    <div class="price-amounts">
+                        <div class="price-row">
+                            <span class="price-currency"></span>
+                            <span class="price-value price-contact">According to Devices</span>
+                        </div>
+                        <div class="price-divider plan-install price-custom-note">Pricing is customized according to the number of devices and business requirements.</div>
+                    </div>
+                    <a href="#" target="_blank" class="btn btn-outline btn-block wa-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VARIANTS ===== -->
+    <section id="variants" class="section variants">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Variants</span>
+                <h2>POS Variants for Every <span class="gradient-text">Business</span></h2>
+                <p>Tailored POS solutions designed for your industry.</p>
+            </div>
+            <div class="variant-grid" id="variant-grid">
+                <div class="variant-card tilt anim" data-variant="restaurant">
+                    <div class="variant-icon-wrap"><span class="variant-icon">🍽️</span></div>
+                    <h3 class="variant-name">Restaurant POS</h3>
+                    <p class="variant-desc">Complete restaurant management with table layout, kitchen orders, and billing.</p>
+                    <span class="variant-badge variant-badge-green">Available</span>
+                </div>
+                <div class="variant-card tilt anim" data-variant="mart">
+                    <div class="variant-icon-wrap"><span class="variant-icon">🛒</span></div>
+                    <h3 class="variant-name">Mart POS</h3>
+                    <p class="variant-desc">Retail and supermarket POS with barcode scanning and inventory tracking.</p>
+                    <span class="variant-badge variant-badge-green">Available</span>
+                </div>
+                <div class="variant-card tilt anim" data-variant="bakery">
+                    <div class="variant-icon-wrap"><span class="variant-icon">🥖</span></div>
+                    <h3 class="variant-name">Bakery POS</h3>
+                    <p class="variant-desc">Bakery-specific billing with weight-based pricing and recipe management.</p>
+                    <span class="variant-badge variant-badge-yellow">Coming Soon</span>
+                </div>
+                <div class="variant-card tilt anim" data-variant="distributor">
+                    <div class="variant-icon-wrap"><span class="variant-icon">🚚</span></div>
+                    <h3 class="variant-name">Distributor POS</h3>
+                    <p class="variant-desc">Wholesale distribution POS with bulk pricing and delivery management.</p>
+                    <span class="variant-badge variant-badge-purple">Premium</span>
+                </div>
+                <div class="variant-card tilt anim" data-variant="salon">
+                    <div class="variant-icon-wrap"><span class="variant-icon">💇</span></div>
+                    <h3 class="variant-name">Salon POS</h3>
+                    <p class="variant-desc">Salon and spa POS with appointment booking and service management.</p>
+                    <span class="variant-badge variant-badge-blue">Enterprise</span>
+                </div>
+                <div class="variant-card tilt anim" data-variant="pharmacy">
+                    <div class="variant-icon-wrap"><span class="variant-icon">💊</span></div>
+                    <h3 class="variant-name">Pharmacy POS</h3>
+                    <p class="variant-desc">Pharmacy POS with expiry tracking, prescription management, and GST.</p>
+                    <span class="variant-badge variant-badge-blue">Enterprise</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HARDWARE ===== -->
+    <section id="hardware" class="section hardware">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Hardware</span>
+                <h2>POS Hardware for Your <span class="gradient-text">Business</span></h2>
+                <p>Professional-grade hardware to power your POS system.</p>
+            </div>
+            <div class="hardware-grid" id="hardware-grid">
+                <div class="hardware-card tilt anim" data-hardware="scanner">
+                    <div class="hardware-icon-wrap"><span class="hardware-icon">📷</span></div>
+                    <h3 class="hardware-name">Barcode Scanner</h3>
+                    <p class="hardware-desc">High-speed barcode scanner for quick product scanning at checkout.</p>
+                    <span class="hardware-badge hardware-badge-green">In Stock</span>
+                </div>
+                <div class="hardware-card tilt anim" data-hardware="barcode-gen">
+                    <div class="hardware-icon-wrap"><span class="hardware-icon">🏷️</span></div>
+                    <h3 class="hardware-name">Barcode Generator</h3>
+                    <p class="hardware-desc">Create and print custom barcodes for your product inventory.</p>
+                    <span class="hardware-badge hardware-badge-green">In Stock</span>
+                </div>
+                <div class="hardware-card tilt anim" data-hardware="thermal">
+                    <div class="hardware-icon-wrap"><span class="hardware-icon">🧾</span></div>
+                    <h3 class="hardware-name">Thermal Printer</h3>
+                    <p class="hardware-desc">High-speed thermal receipt printer with reliable performance.</p>
+                    <span class="hardware-badge hardware-badge-green">In Stock</span>
+                </div>
+                <div class="hardware-card tilt anim" data-hardware="a4-printer">
+                    <div class="hardware-icon-wrap"><span class="hardware-icon">🖨️</span></div>
+                    <h3 class="hardware-name">A4 Printer</h3>
+                    <p class="hardware-desc">Multifunction A4 printer for invoices, reports, and documents.</p>
+                    <span class="hardware-badge hardware-badge-blue">Available</span>
+                </div>
+                <div class="hardware-card tilt anim" data-hardware="pos-terminal">
+                    <div class="hardware-icon-wrap"><span class="hardware-icon">💻</span></div>
+                    <h3 class="hardware-name">POS Terminal</h3>
+                    <p class="hardware-desc">All-in-one POS terminal with touchscreen and built-in printer.</p>
+                    <span class="hardware-badge hardware-badge-blue">Available</span>
+                </div>
+                <div class="hardware-card tilt anim" data-hardware="cash-drawer">
+                    <div class="hardware-icon-wrap"><span class="hardware-icon">💰</span></div>
+                    <h3 class="hardware-name">Cash Drawer</h3>
+                    <p class="hardware-desc">Secure cash drawer with automatic release on transaction completion.</p>
+                    <span class="hardware-badge hardware-badge-blue">Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SCREENSHOTS ===== -->
+    <section id="screenshots" class="section screenshots">
+        <div class="container">
+            <div class="section-head anim"><span class="tag">Preview</span>
+                <h2>See It <span class="gradient-text">In Action</span></h2>
+                <p>Explore the MI Smart POS interface.</p>
+            </div>
+            <div class="ss-action anim"><button class="btn btn-primary btn-lg" onclick="openModal()"><span
+                        class="btn-shine"></span>📸 Open Screenshot Gallery</button></div>
+        </div>
+    </section>
+
+    <!-- ===== SCREENSHOT MODAL ===== -->
+    <div class="modal" id="ss-modal">
+        <div class="modal-box">
+            <button class="modal-x" onclick="closeModal()">✕</button>
+            <h3 class="modal-heading">Screenshot Gallery</h3>
+            <div class="modal-grid" id="modal-grid">
+                <div class="modal-empty" id="modal-empty">
+                    <p>📸 Add images to the <code>/screenshots</code> folder to see them here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox"><button class="lb-close" onclick="closeLB()">✕</button><img id="lb-img" src=""
+            alt="Preview"></div>
+
+    <!-- ===== CONTACT / CTA ===== -->
+    <section id="contact" class="section cta">
+        <div class="container">
+            <div class="cta-inner anim">
+                <span class="tag">Get Started</span>
+                <h2>Ready to Transform<br>Your <span class="gradient-text">Business?</span></h2>
+                <p>Reach out on WhatsApp — we'll get you set up instantly.</p>
+                <div class="cta-btns">
+                    <a href="https://wa.me/923325900007?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="btn btn-wa wa-link-primary"><span class="btn-shine"></span>💬 WhatsApp — Primary</a>
+                    <a href="https://wa.me/923162905672?text=I%20want%20to%20buy%20MI%20Smart%20POS" target="_blank"
+                        class="btn btn-wa-alt wa-link-secondary">💬 WhatsApp — Secondary</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand"><img src="assets/logo.png" alt="MI Smart POS" class="footer-logo"><span>MI Smart
+                    <span class="accent">POS</span></span></div>
+            <div class="footer-nav"><a href="#hero">Home</a><a href="#features">Features</a><a
+                    href="#pricing">Pricing</a><a href="#contact">Contact</a><a href="admin.html">Admin</a></div>
+        </div>
+        <div class="container">
+            <div class="footer-line"></div>
+        </div>
+        <div class="container footer-bottom">
+            <p class="footer-credit">Engineered with Precision by <a href="https://malikirteza.com/" target="_blank"><strong>Malik Irteza</strong></a></p>
+            <p>Software & Website Designed and Developed by <a href="https://malikirteza.com/" target="_blank">Malik Irteza</a></p>
+            <p class="footer-contact"><a href="https://malikirteza.com/" target="_blank">malikirteza.com</a> &bull; +92 320 9891360</p>
+            <p class="copy">© 2026 MI Smart POS &mdash; Powering the Future of Smart Business Management.</p>
+        </div>
+    </footer>
+
+    <!-- ===== THEME TOGGLE (Fixed Bottom-Right) ===== -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle Light/Dark Mode">
+        <span class="theme-icon theme-icon-sun">☀️</span>
+        <span class="theme-icon theme-icon-moon">🌙</span>
+    </button>
+
+    <script src="loader.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
